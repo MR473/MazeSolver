@@ -3,7 +3,8 @@ from PIL import Image, ImageDraw
 
 images = []
 
-a, rows, columns = ConvertImage('maze.png')
+maze_name = input("Enter Image name with file format (eg. "maze.png"): ")
+a, rows, columns = ConvertImage(maze_name)
 zoom = 20
 borders = 5
 start = 1,0
