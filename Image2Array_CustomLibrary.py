@@ -5,7 +5,7 @@ def ConvertImage(ImageName):
 
     # Open the maze image and make greyscale, and get its dimensions
     im = Image.open(ImageName).convert('L')
-    im.show()
+    #im.show()
     w, h = im.size
 
     # Ensure all black pixels are 0 and all white pixels are 1
