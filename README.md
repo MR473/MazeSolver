@@ -1,4 +1,6 @@
 # MazeSolver
+TO RUN PROGRAM RUN: 'maze_solver.py'
+
 
 Task: Finds a path through the maze
 
@@ -15,3 +17,4 @@ GENERATING MAZE:
 
 OUTPUT:
 	- Output would be a .gif which will be found in the ./outputs/ directory
+
