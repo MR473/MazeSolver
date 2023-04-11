@@ -3,8 +3,11 @@ from PIL import Image, ImageDraw
 
 images = []
 
-maze_name = input("Enter Image name with file format (eg. "maze.png"): ")
-a, rows, columns = ConvertImage(maze_name)
+maze_name = input("Enter Image name with file format (eg. 'maze.png'): ")
+output_name = input("Save output as (filename alone): ")
+print("PLEAS EGIVE ME SOME TIME....")
+maze_loc = './inputs/' + maze_name
+a, rows, columns = ConvertImage(maze_loc)
 zoom = 20
 borders = 5
 start = 1,0
@@ -24,12 +27,13 @@ def make_step(k):
           m[i+1][j] = k + 1
         if j<len(m[i])-1 and m[i][j+1] == 0 and a[i][j+1] == 0:
            m[i][j+1] = k + 1
-
+"""
 def print_m(m):
     for i in range(len(m)):
         for j in range(len(m[i])):
             print( str(m[i][j]).ljust(2),end=' ')
         print()
+"""
 
 def draw_matrix(a,m, the_path = []):
     im = Image.new('RGB', (zoom * len(a[0]), zoom * len(a)), (255, 255, 255))
@@ -104,11 +108,13 @@ for i in range(10):
     else:
         draw_matrix(a, m)
 
-print_m(m)
-print(the_path)
+#print_m(m)
+#print(the_path)
 
-
-images[0].save('maze.gif',
+saveas = './outputs/' + output_name +'.gif'
+images[0].save(saveas,
                save_all=True, append_images=images[1:],
                optimize=False, duration=1, loop=0)
+               
+print("Output generated. Close program and check working directory.")
 
